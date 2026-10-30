@@ -139,7 +139,7 @@ def run_theharvester(domain: str):
         return "Invalid domain format."
 
     domain = domain.strip().lower()
-    report_dir = Path("/Users/dr.saeedhamadalhassani/theHarvester")
+    report_dir = Path("/theHarvester")
     report_dir.mkdir(exist_ok=True)
     report_name = report_dir / f"harvester_{domain}"
     
@@ -159,7 +159,7 @@ def run_blackbird(email=None, username=None):
         cmd, 
         capture_output=True, 
         text=True, 
-        cwd="/Users/dr.saeedhamadalhassani/blackbird"
+        cwd="/" #blackbird file path 
     )
     
     return _res.stdout + _res.stderr
@@ -282,14 +282,14 @@ if __name__ == "__main__":
 #     domain = domain.strip().lower()
 
 #     # Create a directory for investigation reports
-#     report_dir = Path("/Users/dr.saeedhamadalhassani/theHarvester")
+#     report_dir = Path("/path to --> /theHarvester")
 #     report_dir.mkdir(exist_ok=True)
 
 #     report_name = report_dir / f"harvester_{domain}"
 
 #     # command = [
 #     #     "uv", "run", "--directory",
-#     #     "/Users/dr.saeedhamadalhassani/theHarvester",
+#     #     "//theHarvester",
 #     #     "theHarvester",
 #     #     "-d", domain,
 #     #     "-b", "crtsh,certspotter",
